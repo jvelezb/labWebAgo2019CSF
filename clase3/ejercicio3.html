@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Practica 1 introduccion a react
+            </title>
+            <script src="https://unpkg.com/react@16/umd/react.development.js">
+            </script>
+            <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+            </script>
+            <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+            </script>
+            <style>
+                .class1{
+                    font-size: 20px;
+                    color: blue;
+                }
+                 .class2{
+                    font-size: 40px;
+                    color: red;
+                }
+                
+            </style>
+        </meta>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+            var destino = document.querySelector('#container');
+           {/* I am a child comment */}
+            
+             extends React.Component{
+            render(){
+                var estilo={
+                  padding: 10,      
+                   margin: 10,      
+                   backgroundColor: this.props.bgcolor,     
+                    color: "#333",      
+                    display: "inline-block",      
+                     fontFamily: "monospace",      
+                    fontSize: 32,      
+                    textAlign: "center"    
+                };
+                const numero = this.props.numero;
+                return(<div>
+                    <p className={numero == "2" ?'class1': 'class2'}>Hola </p>
+                    <div style={estilo}>
+                        {this.props.children}
+                    </div>
+                </div>
+                    );
+
+
+                }
+
+            }
+           ReactDOM.render(<div>
+                <Vocal bgcolor="#58B3FF" numero="1">A</Vocal>
+                <Vocal bgcolor="#FF605F" numero="2">E
+                </Vocal>
+           </div>,destino);
+          
+        </script>
+    </body>
+</html>
+
+
+
+

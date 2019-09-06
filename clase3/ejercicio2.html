@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Practica 1 introduccion a react
+            </title>
+            <script src="https://unpkg.com/react@16/umd/react.development.js">
+            </script>
+            <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+            </script>
+            <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">
+            </script>
+        </meta>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+         class Clase1 extends React.Component{
+            render(){
+                return(
+                <div>
+                 <p>Hola a {this.props.nombre}</p>
+                <button type={this.props.comportamiento}>{this.props.children}</button> 
+            </div>
+                );
+            }
+
+        }
+
+            ReactDOM.render(
+            <div>
+                <Clase1 nombre="Juan" comportamiento="submit" > text1</Clase1>
+                <Clase1 nombre="Ernesto" comportamiento="submit"><h1>text3</h1><h1>text3</h1></Clase1>
+                <Clase1 nombre="Daniel" comportamiento="submit" >text2</Clase1>
+            </div>
+            , document.querySelector('#container'));
+
+          
+        </script>
+    </body>
+</html>
+
+
