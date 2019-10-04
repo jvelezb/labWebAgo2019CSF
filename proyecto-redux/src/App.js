@@ -14,7 +14,7 @@ const mapaerEstado = state =>({
 
 class App extends Component {
 
-  saludar = (event) => {
+  saludar =  (event) => {
     this.props.loquesea();
 
   }
